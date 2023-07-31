@@ -1,0 +1,15 @@
+<div class="details row" *ngIf="loader">
+  <div class="col-5 col-md-4 col-sm-12">
+    <img src="{{ data.image }}" alt="" />
+  </div>
+  <ul class="info col-7 col-md-8 col-sm-12 list-unstyled">
+    <li><strong>Title</strong> : {{ data.title }}</li>
+    <li><strong>Category</strong> : {{ data.category }}</li>
+    <li><strong>Description</strong> : {{ data.description }}</li>
+    <li><strong>Rate</strong> : {{ data.rating.rate }}</li>
+    <li><strong>Count</strong> : {{ data.rating.count }}</li>
+    <li><strong>Price</strong>: {{ data.price }}</li>
+  </ul>
+</div>
+
+<app-loader *ngIf="!loader"></app-loader>

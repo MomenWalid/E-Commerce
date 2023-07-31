@@ -1,0 +1,26 @@
+.card {
+  margin: 50px 0;
+}
+.table th {
+  text-align: center;
+}
+.table .quantity input {
+  margin: 0 20px;
+}
+.table tbody {
+  border-top: 1px solid #c61d23;
+  border-bottom: 1px solid #c61d23;
+}
+.table tbody tr td {
+  border-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+.table tbody tr td img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.table tbody input {
+  text-align: center;
+}

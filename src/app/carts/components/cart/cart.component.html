@@ -1,0 +1,86 @@
+<div class="card p-4">
+  <h2 class="text-danger">Shopping Cart</h2>
+  <div class="d-flex align-items-center justify-content-between">
+    <span
+      >you have <span class="text-danger">{{ cartProduct.length }}</span> item
+      in your cart</span
+    >
+    <button
+      (click)="clearCart()"
+      class="btn btn-light text-danger"
+      [disabled]="cartProduct.length == 0"
+    >
+      Clear Shopping Cart
+    </button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Price</th>
+        <th class="w-25">Quantity</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of cartProduct">
+        <td>
+          <img src="{{ product.data.image }}" alt="" />
+        </td>
+        <td>{{ product.data.title }}</td>
+        <td>{{ product.data.price }}</td>
+        <td>
+          <div
+            class="quantity d-flex align-items-center justify-content-between"
+          >
+            <button (click)="increaseQuantity(product)" class="btn btn-dark">
+              +
+            </button>
+            <input
+              type="number"
+              class="form-control"
+              min="1"
+              (change)="changeQuantity()"
+              [(ngModel)]="product.quantity"
+            />
+            <button (click)="decreaseQuantity(product)" class="btn btn-dark">
+              -
+            </button>
+          </div>
+        </td>
+        <td>{{ product.data.price * product.quantity }}</td>
+        <td>
+          <button (click)="deleteProduct(product)" class="btn btn-danger">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Total : {{ total }}</th>
+        <th>
+          <button
+            class="btn btn-success"
+            (click)="addCart()"
+            [disabled]="cartProduct.length == 0"
+          >
+            Order Now
+          </button>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<div class="alert alert-success" role="alert" *ngIf="success">
+  <strong>Well done!</strong> your order is succesfully send
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="clear">
+  <strong>Be Careful!</strong> you Clear Your Cart
+</div>

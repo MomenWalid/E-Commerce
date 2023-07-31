@@ -1,0 +1,31 @@
+<nav *ngIf="adminLogin; then admin; else customer"></nav>
+
+<ng-template #customer>
+  <nav>
+    <div class="container">
+      <div class="content">
+        <h2 class="logo">Market</h2>
+        <ul>
+          <li routerLink="/admin" (click)="adminLogin = true">Admin</li>
+          <li routerLink="/products">Products</li>
+          <li routerLink="/carts">Cart</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</ng-template>
+
+<ng-template #admin>
+  <nav>
+    <div class="container">
+      <div class="content">
+        <h2 class="logo">Market-Admin</h2>
+        <ul>
+          <li routerLink="/products" (click)="adminLogin = false">Custmoer</li>
+          <li routerLink="/adminProducts">Products</li>
+          <li routerLink="/admin">Cart</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</ng-template>
