@@ -1,9 +1,21 @@
 .card {
   margin: 50px 0;
+  overflow-x: auto;
+}
+@media (max-width: 768px) {
+  .card .nproduct {
+    flex-direction: column;
+    margin: 15px;
+    gap: 10px;
+  }
+}
+.table {
+  min-width: 1000px;
 }
 .table th {
   text-align: center;
 }
+
 .table .quantity input {
   margin: 0 20px;
 }

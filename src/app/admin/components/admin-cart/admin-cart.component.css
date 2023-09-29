@@ -1,15 +1,17 @@
-.card{
+.card {
   margin: 50px 0;
+  overflow-x: auto;
 }
 
 .table {
   border-top: 1px solid #ddd;
+  min-width: 1000px;
 }
-.table th{
+.table th {
   text-align: center;
 }
-.table .quantity input{
-margin: 0 20px;
+.table .quantity input {
+  margin: 0 20px;
 }
 
 .table tbody tr td {
@@ -25,6 +27,3 @@ margin: 0 20px;
 .table tbody input {
   text-align: center;
 }
-
-
-
